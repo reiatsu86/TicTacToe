@@ -95,7 +95,7 @@ function checkWinConditions() {
     // o 6,7,8 condition
     else if (arrayIncludes ('6O', '7O', '8O')) {drawWinLine(50, 508, 558, 508);}
     // o 0,3,6 condition
-    else if (arrayIncludes ('0O', '3O', '6O')) {drawWinLine(100, 50, 304, 558);}
+    else if (arrayIncludes ('0O', '3O', '6O')) {drawWinLine(100, 50, 100, 558);}
     // o 1,4,7 condition
     else if (arrayIncludes ('1O', '4O', '7O')) {drawWinLine(304, 50, 304, 558);}
     // o 2,5,8 condition
@@ -184,7 +184,7 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
             //This condition adds 10 to the previous y point.
             if (y < y2) { y += 10;}
             //This condition cancels our animation loop if we reach the end points.
-            if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop);} // fix: removed space on func call
+            if (x >= x2 && y >= y2) {cancelAnimationFrame(animationLoop);} // fix: removed space on func call
         }
         //This condition is similar to the one above.
         //It was necessary for the 6,4,2 win condition.
